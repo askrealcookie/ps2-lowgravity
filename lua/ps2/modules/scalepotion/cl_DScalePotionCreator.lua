@@ -8,7 +8,7 @@ function PANEL:Init( )
     self.scalePotionPanel = vgui.Create( "DScalePotionCreator_Stage1" )
     
     -- Add our custom control to the steps list
-    self.stepsPanel:AddStep( "Scale Potion Settings", self.scalepotionPanel )
+    self.stepsPanel:AddStep( "Scale Potion Settings", self.scalePotionPanel )
 end
 
 -- Create a new Derma Control called DLowGravityCreator, using the functions from the PANEL Table
