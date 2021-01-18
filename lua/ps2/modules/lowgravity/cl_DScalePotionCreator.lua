@@ -5,7 +5,7 @@ function PANEL:Init( )
     -- Which creates the first step with the basic pointshop item information
 
     -- Create a DLowGravityCreator_Stage1 which we will define later
-    self.scalePotionPanel = vgui.Create( "DLowGravityCreator_Stage1" )
+    self.scalePotionPanel = vgui.Create( "DScalePotionCreator_Stage1" )
     
     -- Add our custom control to the steps list
     self.stepsPanel:AddStep( "Scale Potion Settings", self.scalepotionPanel )
