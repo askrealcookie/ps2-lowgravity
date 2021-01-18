@@ -1,15 +1,15 @@
 local MODULE = {}
 
-MODULE.Name = "PS2 Low Gravity"
-MODULE.Author = "Kamshak"
+MODULE.Name = "PS2 Scale Potion"
+MODULE.Author = "Cookie"
 
 MODULE.Blueprints = {
 	{
-		label = "Low Gravity",
-		base = "base_low_gravity",
+		label = "Scale Potion",
+		base = "base_scale_potion",
 		icon = "pointshop2/crime1.png",
-		creator = "DLowGravityCreator",
-		tooltip = "Create low-gravity items."
+		creator = "DScalePotionCreator",
+		tooltip = "Create scale potions."
 	}
 }
 

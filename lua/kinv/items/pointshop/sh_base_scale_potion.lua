@@ -36,7 +36,7 @@ function ITEM.static.GetPointshopIconDimensions( )
 end
 
 function ITEM.static.getPersistence( )
-	return Pointshop2.LowGravityPersistence
+	return Pointshop2.ScalePotionPersistence
 end
 
 function ITEM.static.generateFromPersistence( itemTable, persistence )

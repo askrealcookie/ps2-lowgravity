@@ -1,14 +1,14 @@
 -- Define the class
-Pointshop2.LowGravityPersistence = class( "Pointshop2.LowGravityPersistence" )
-local LowGravityPersistence = Pointshop2.LowGravityPersistence 
+Pointshop2.ScalePotionPersistence = class( "Pointshop2.ScalePotionPersistence" )
+local ScalePotionPersistence = Pointshop2.ScalePotionPersistence 
 
 -- Link to the Pointshop2 Database
-LowGravityPersistence.static.DB = "Pointshop2"
+ScalePotionPersistence.static.DB = "Pointshop2"
 
 -- Define model fields
-LowGravityPersistence.static.model = {
+ScalePotionPersistence.static.model = {
     -- Name of the SQL Table
-    tableName = "ps2_lowgravitypersistence",
+    tableName = "ps2_scalepotionpersistence",
 
     -- Table columns:
     fields = {
@@ -30,10 +30,10 @@ LowGravityPersistence.static.model = {
 }
 
 -- Include Database Logic (creating tables, adding accessor functions)
-LowGravityPersistence:include( DatabaseModel )
+ScalePotionPersistence:include( DatabaseModel )
 
 -- Include EasyExport: Makes it possible to import/export the item
-LowGravityPersistence:include( Pointshop2.EasyExport )
+ScalePotionPersistence:include( Pointshop2.EasyExport )
 
 --[[
     Called by the Item Creator to update or create a persistence.
@@ -42,24 +42,24 @@ LowGravityPersistence:include( Pointshop2.EasyExport )
     - doUpdate: A boolean, true if we are updating an item, false if 
                 creating it.
 ]]--
-function LowGravityPersistence.static.createOrUpdateFromSaveTable( saveTable, doUpdate )
+function ScalePotionPersistence.static.createOrUpdateFromSaveTable( saveTable, doUpdate )
     -- call the base item createOrUpdateFromSaveTable to save basic item info (description, name, price, etc.) 
     return Pointshop2.ItemPersistence.createOrUpdateFromSaveTable( saveTable, doUpdate )
     :Then( function( itemPersistence )
         if doUpdate then
             -- Find the database row to update
-            return LowGravityPersistence.findByItemPersistenceId( itemPersistence.id )
+            return ScalePotionPersistence.findByItemPersistenceId( itemPersistence.id )
         else
             -- Create a new database row
-            local weaponPersistence = LowGravityPersistence:new( )
+            local weaponPersistence = ScalePotionPersistence:new( )
             -- link the basic item info
             weaponPersistence.itemPersistenceId = itemPersistence.id
             return weaponPersistence
         end
     end )
-    :Then( function( lowGravPersistence )
+    :Then( function( scalePotPersistence )
         -- Set our custom properties
-        lowGravPersistence.multiplier = saveTable.multiplier
-        return lowGravPersistence:save( )
+        scalePotPersistence.multiplier = saveTable.multiplier
+        return scalePotPersistence:save( )
     end )
 end

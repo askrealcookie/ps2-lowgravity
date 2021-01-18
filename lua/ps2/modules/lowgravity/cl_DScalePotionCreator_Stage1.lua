@@ -5,7 +5,7 @@ function PANEL:Init( )
     self.infoPanel:SetSmall( true )
     self.infoPanel:Dock( TOP )
     self.infoPanel:SetInfo( "Multiplier", 
-    [[When the user equips the item their jump power is multiplied by the multiplier. E.g. a multiplier of 0.5 means half jump power, 2 means double.]] )
+    [[When the user equips the item their model scale is multiplied by the multiplier. E.g. a multiplier of 0.5 means half model scale, 2 means double.]] )
     self.infoPanel:DockMargin( 5, 5, 5, 5 )
 
     -- Add a title
@@ -23,8 +23,8 @@ function PANEL:SaveItem( saveTable )
 end
 
 function PANEL:Validate( saveTable )
-    if self.multiplierWang:GetValue() < 0 then
-        return false, "Multiplier must be greater or equal to zero."
+    if self.multiplierWang:GetValue() <= 0 then
+        return false, "Multiplier must be greater than zero."
     end
 
     return true
@@ -37,4 +37,4 @@ end
 -- Override background painting
 function PANEL:Paint() end
 
-vgui.Register( "DLowGravityCreator_Stage1", PANEL, "DItemCreator_Stage" )
+vgui.Register( "DScalePotionCreator_Stage1", PANEL, "DItemCreator_Stage" )

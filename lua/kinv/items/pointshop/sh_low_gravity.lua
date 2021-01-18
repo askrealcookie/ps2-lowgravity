@@ -1,6 +1,6 @@
-ITEM.baseClass	= "base_low_gravity"
-ITEM.PrintName	= "Low Gravity"
-ITEM.Description = "Equip this to get 2x Jump Power!"
+ITEM.baseClass	= "base_scale_potion"
+ITEM.PrintName	= "Scale Gravity"
+ITEM.Description = "Equip this to get 2x bigger!"
 ITEM.static.Price = {
     points = 100
 }
