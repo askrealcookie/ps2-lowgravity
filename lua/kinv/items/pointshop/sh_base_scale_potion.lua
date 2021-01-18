@@ -1,18 +1,20 @@
 ITEM.baseClass	= "base_pointshop_item"
 ITEM.multiplier = 2
-ITEM.material = "pointshop2/winner2.png"
+ITEM.material = "pointshop2/wizard_l.png"
 
-function ITEM:PlayerSpawn( ply )
-    if ply != self:GetOwner() then
-        return
-    end
+-- Set model scale to multiplier
+function ITEM:OnEquip( )
+    local ply = self:GetOwner()
 
-    local oldJumpPower = ply:GetJumpPower( )
-    timer.Simple( 0.5, function ( ) 
-        ply:SetJumpPower( oldJumpPower * self.multiplier )
-    end )
+    ply:SetModelScale( self.multiplier, 0.5 )
 end
-Pointshop2.AddItemHook( "PlayerSpawn", ITEM )
+
+-- Set model scale to default
+function ITEM:OnHolster( )
+    local ply = self:GetOwner()
+
+    ply:SetModelScale( 1, 0.5 )
+end
 
 -- Returns a Derma Control Name used to create the shop icon in normal mode
 function ITEM.static:GetPointshopIconControl( )
