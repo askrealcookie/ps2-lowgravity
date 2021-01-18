@@ -1,6 +1,6 @@
 ITEM.baseClass	= "base_pointshop_item"
 ITEM.multiplier = 2
-ITEM.material = "pointshop2/wizard_l.png"
+ITEM.material = "pointshop2/wizard.png"
 
 -- Set model scale to multiplier
 function ITEM:OnEquip( )
@@ -34,7 +34,7 @@ function ITEM:getIcon( )
 end
 
 function ITEM.static.GetPointshopIconDimensions( )
-	return Pointshop2.GenerateIconSize( 4, 4 )
+	return Pointshop2.GenerateIconSize( 2, 2 )
 end
 
 function ITEM.static.getPersistence( )

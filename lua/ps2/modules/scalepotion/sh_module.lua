@@ -1,6 +1,6 @@
 local MODULE = {}
 
-MODULE.Name = "PS2 Scale Potion"
+MODULE.Name = "PS2 Scale Potions"
 MODULE.Author = "Cookie"
 
 MODULE.Blueprints = {
