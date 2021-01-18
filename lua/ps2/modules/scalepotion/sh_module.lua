@@ -7,7 +7,7 @@ MODULE.Blueprints = {
 	{
 		label = "Scale Potion",
 		base = "base_scale_potion",
-		icon = "pointshop2/crime1.png",
+		icon = "pointshop2/wizard_l.png",
 		creator = "DScalePotionCreator",
 		tooltip = "Create scale potions."
 	}
