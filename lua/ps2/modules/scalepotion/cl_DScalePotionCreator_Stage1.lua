@@ -31,7 +31,7 @@ function PANEL:Validate( saveTable )
 end
 
 function PANEL:EditItem( persistence, itemClass )
-    self.multiplier:SetValue( persistence.multiplier )
+    self.multiplierWang:SetValue( persistence.multiplier )
 end
 
 -- Override background painting
